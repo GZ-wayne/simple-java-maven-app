@@ -94,10 +94,10 @@ org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \\
         }
 
         withCredentials(bindings: [usernamePassword(
-                                                                                                                                                                                                                                                                                          credentialsId: ACR_CREDENTIALS_ID,
-                                                                                                                                                                                                                                                                                          usernameVariable: 'ACR_USERNAME',
-                                                                                                                                                                                                                                                                                          passwordVariable: 'ACR_PASSWORD'
-                                                                                                                                                                                                                                                                                      )]) {
+                                                                                                                                                                                                                                                                                                    credentialsId: ACR_CREDENTIALS_ID,
+                                                                                                                                                                                                                                                                                                    usernameVariable: 'ACR_USERNAME',
+                                                                                                                                                                                                                                                                                                    passwordVariable: 'ACR_PASSWORD'
+                                                                                                                                                                                                                                                                                                )]) {
             sh "docker login -u ${ACR_USERNAME} -p ${ACR_PASSWORD} ${ACR_REGISTRY}"
           }
 
@@ -110,7 +110,7 @@ org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \\
     }
     environment {
       ACR_REGISTRY = 'registry.cn-guangzhou.aliyuncs.com'
-      ACR_NAMESPACE = 'wayne-lee'
+      ACR_NAMESPACE = 'w_a'
       IMAGE_NAME = 'testbuild'
       IMAGE_TAG = "${env.BUILD_ID}"
       ACR_CREDENTIALS_ID = 'aliyun-docker-creds'
